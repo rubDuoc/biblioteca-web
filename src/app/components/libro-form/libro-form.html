@@ -1,0 +1,44 @@
+<!-- VISTA (MVC): formulario de creacion y edicion de libros -->
+<a routerLink="/libros">← Volver al listado</a>
+
+<h2>{{ esEdicion ? 'Editar libro' : 'Nuevo libro' }}</h2>
+
+@if (error()) {
+  <p class="alerta">{{ error() }}</p>
+}
+
+<form [formGroup]="form" (ngSubmit)="guardar()" class="tarjeta">
+  <label>
+    Título *
+    <input type="text" formControlName="titulo" />
+    @if (invalido('titulo')) {
+      <span class="campo-error">El título es obligatorio (máximo 200 caracteres).</span>
+    }
+  </label>
+
+  <label>
+    Autor *
+    <input type="text" formControlName="autor" />
+    @if (invalido('autor')) {
+      <span class="campo-error">El autor es obligatorio (máximo 150 caracteres).</span>
+    }
+  </label>
+
+  <label>
+    Año de publicación
+    <input type="number" formControlName="anioPublicacion" />
+    @if (invalido('anioPublicacion')) {
+      <span class="campo-error">Ingresa un año entre 0 y {{ anioMaximo }}.</span>
+    }
+  </label>
+
+  <label>
+    Género
+    <input type="text" formControlName="genero" />
+    @if (invalido('genero')) {
+      <span class="campo-error">Máximo 100 caracteres.</span>
+    }
+  </label>
+
+  <button type="submit" class="btn">{{ esEdicion ? 'Guardar cambios' : 'Agregar libro' }}</button>
+</form>

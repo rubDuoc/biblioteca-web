@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: #1f3a5f;
+  color: #fff;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.subtitulo {
+  opacity: 0.8;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}

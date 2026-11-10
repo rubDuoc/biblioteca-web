@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globales de la aplicacion */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f6f9;
+  color: #222;
+}
+
+a {
+  color: #1f3a5f;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #e3e6eb;
+}
+
+th {
+  background: #e9eef5;
+}
+
+.tarjeta {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+dt {
+  font-weight: 700;
+  margin-top: 0.6rem;
+}
+
+dd {
+  margin: 0.2rem 0 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background: #1f3a5f;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn.secundario {
+  background: #5b6b80;
+}
+
+.btn.peligro {
+  background: #c0392b;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.alerta {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  background: #fdecea;
+  color: #8a1f17;
+}

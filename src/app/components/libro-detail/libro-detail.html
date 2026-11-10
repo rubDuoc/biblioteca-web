@@ -1,0 +1,23 @@
+<!-- VISTA (MVC): detalle de un libro -->
+<a routerLink="/libros">← Volver al listado</a>
+
+@if (error()) {
+  <p class="alerta">{{ error() }}</p>
+}
+
+@if (libro$ | async; as libro) {
+  <article class="tarjeta">
+    <h2>{{ libro.titulo }}</h2>
+    <dl>
+      <dt>ID</dt>
+      <dd>{{ libro.id }}</dd>
+      <dt>Autor</dt>
+      <dd>{{ libro.autor }}</dd>
+      <dt>Año de publicación</dt>
+      <dd>{{ libro.anioPublicacion }}</dd>
+      <dt>Género</dt>
+      <dd>{{ libro.genero }}</dd>
+    </dl>
+    <a [routerLink]="['/libros', libro.id, 'editar']" class="btn">Editar</a>
+  </article>
+}

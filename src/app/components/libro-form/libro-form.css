@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 480px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #c8ccd4;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: normal;
+}
+
+.campo-error {
+  color: #c0392b;
+  font-size: 0.85rem;
+  font-weight: normal;
+}

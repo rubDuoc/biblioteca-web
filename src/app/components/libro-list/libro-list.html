@@ -1,0 +1,44 @@
+<!-- VISTA (MVC): listado de libros -->
+<section class="encabezado">
+  <h2>Libros</h2>
+  <a routerLink="/libros/nuevo" class="btn">+ Nuevo libro</a>
+</section>
+
+@if (error()) {
+  <p class="alerta">{{ error() }}</p>
+}
+
+@if (libros$ | async; as libros) {
+  @if (libros.length === 0) {
+    <p>No hay libros registrados.</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Año</th>
+          <th>Género</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (libro of libros; track libro.id) {
+          <tr>
+            <td>{{ libro.id }}</td>
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor }}</td>
+            <td>{{ libro.anioPublicacion }}</td>
+            <td>{{ libro.genero }}</td>
+            <td class="acciones">
+              <a [routerLink]="['/libros', libro.id]" class="btn secundario">Ver</a>
+              <a [routerLink]="['/libros', libro.id, 'editar']" class="btn secundario">Editar</a>
+              <button type="button" class="btn peligro" (click)="eliminar(libro)">Eliminar</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+}
